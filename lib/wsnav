@@ -1,0 +1,3 @@
+[% FOREACH item IN items %]
+<span class="wsnavitem"> &nbsp; <a href="[% item.url %]">[% item.text %]</a></span><br>
+[% END %]

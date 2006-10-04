@@ -1,0 +1,3 @@
+[% FOREACH item IN items %]
+<span class="navitem"><a href="[% item.url %]">[% item.text %]</a></span> |
+[% END %]

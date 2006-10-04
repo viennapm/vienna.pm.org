@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<title>Vienna.pm - [% title %]</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<link rel="Stylesheet" href="viennapm.css" type="text/css">
+</head>
+
+<body>
+
+<div class="top">Vienna.pm - die Wiener Perl Community</div>
+<div class="nav">
+<b><a href='index.html'>Vienna.pm</a></b> |
+<a href='liste.html'>Mailingliste</a> |
+<a href="irc.html">IRC</a> |
+<a href="treffen.html">Treffen</a> |
+<a href="workshops.html">Workshops</a> |
+<a href="projekte.html">Projekte</a> |
+<a href="verein.html">Verein</a> |
+<a href="wer.html">Wer ist wer</a> |
+<a href="jobs.html">Jobs</a> |
+</div>
+
+<div class="content">
+<h2>[% title %]</h2>
+
+[% content %]
+</div>
+
+<div class="footer">
+Letzte &Auml;nderung: [% lastmod %]; Kontakt: &lt;domm AT zsi.at&gt; 
+</div>
+
+</body>
+
+</html>
+
