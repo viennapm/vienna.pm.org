@@ -1,45 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>Vienna.pm - [% title %]</title>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-<link rel="Stylesheet" href="viennapm.css" type="text/css">
+  <title>Vienna.pm - [% title %]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="viennapm.css" type="text/css" />
 </head>
 
 <body>
 
 <div class="top">Vienna.pm - die Wiener Perl Community</div>
 <div class="nav">
-<b><a href='index.html'>Vienna.pm</a></b> |
-<a href='liste.html'>Mailingliste</a> |
-<a href="irc.html">IRC</a> |
-<a href="wiki.html">Wiki</a> |
-<a href="treffen.html">Treffen</a> |
-<a href="workshops.html">Workshops</a> |
-<a href="projekte.html">Projekte</a> |
-<a href="verein.html">Verein</a> |
-<a href="wer.html">Wer ist wer</a> |
-<a href="jobs.html">Jobs</a> |
+  <b><a href='index.html'>Vienna.pm</a></b> |
+  <a href='liste.html'>Mailingliste</a> |
+  <a href="irc.html">IRC</a> |
+  <a href="wiki.html">Wiki</a> |
+  <a href="treffen.html">Treffen</a> |
+  <a href="workshops.html">Workshops</a> |
+  <a href="projekte.html">Projekte</a> |
+  <a href="verein.html">Verein</a> |
+  <a href="wer.html">Wer ist wer</a> |
+  <a href="jobs.html">Jobs</a> |
 </div>
 
 <div class="content">
-<h2>[% title %]</h2>
+  <h2>[% title %]</h2>
 
-[% content %]
+  [% content %]
 </div>
 
 <div class="footer">
-Letzte &Auml;nderung: [% lastmod %]; Kontakt: &lt;rt-verein&nbsp;ÄT&nbsp;rt.useperl.at&gt; 
+Letzte &Auml;nderung: [% lastmod %]; Kontakt: &lt;rt-verein&nbsp;AT&nbsp;rt.useperl.at&gt;
 </div>
 
 <div class="perladbox">
-<div id="perlad">
-<script type="text/javascript"  src="http://adserver.szabgab.com/ads/direct_link_selflink.js?cnt=3"></script>
-</div>
+  <div id="perlad">
+    <script type="text/javascript" src="http://adserver.szabgab.com/ads/direct_link_selflink.js?cnt=3"></script>
+  </div>
 </div>
 
 </body>
 
 </html>
-
