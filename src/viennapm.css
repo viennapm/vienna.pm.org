@@ -50,6 +50,11 @@ width: 500px;
   text-align: right;
 }
 
+.quote {
+    margin: 20px 20px 20px 20px;
+    font-style: italic;
+}
+
 dt {
   font-weight: bold;
 
@@ -84,6 +89,4 @@ h3 {
 h4 {
 	border-bottom: 1px solid #6495ED;
 }
-
-
 
