@@ -1,0 +1,33 @@
+WEBDIR=$1
+if [ -z "$WEBDIR" ]; then
+    WEBDIR=.
+fi
+if [ ! -f "$WEBDIR/bin/build" ]; then
+    echo "No build script found in $WEBDIR/bin/build... exiting"
+    exit 1
+fi
+if [ -z "`which ncftpput`" ]; then
+    echo "No binary ncftpput found, please install ncftp package... exiting"
+    exit 1
+fi
+
+if [ ! -r bin/build ]; then
+    echo "Missing build script in $WEBDIR, searched for bin/build"
+    exit 1
+fi
+bin/build
+
+if [ ! -d "$WEBDIR/html" ]; then
+    echo "No html dir found in $WEBDIR... exiting"
+    exit 1
+fi
+if [ ! -f "$WEBDIR/html/index.html" ]; then
+    echo "No index.html found in $WEBDIR/html... exiting"
+    exit 1
+fi
+
+### RSYNC not used yet
+# rsync -avh -i --delete $WEBDIR/html/ root@web.quikit.at:/var/vhosts/viennapm/useperl.at/
+
+ncftpput -f etc/update-web-ftp.cfg -R useperl.at/ $WEBDIR/html/*
+
