@@ -16,13 +16,13 @@
   <b><a href='index.html'>Vienna.pm</a></b> |
   <a href='liste.html'>Mailingliste</a> |
   <a href="irc.html">IRC</a> |
-  <a href="https://twitter.com/ViennaPerl">Twitter<a/> |
   <a href="treffen.html">Treffen</a> |
-  <a href="https://www.meetup.com/Vienna-Perl-Mongers">Meetup</a> |
   <a href="workshops.html">Workshops</a> |
   <a href="projekte.html">Projekte</a> |
   <a href="verein.html">Verein</a> |
-  <a href="jobs.html">Jobs</a> |
+  <a href="jobs.html">Jobs</a> ||
+  <a href="https://twitter.com/ViennaPerl">Twitter</a> |
+  <a href="https://www.meetup.com/Vienna-Perl-Mongers">Meetup</a>
 </div>
 
 <div class="content">
