@@ -4,4 +4,5 @@ use DateTime;
 my $dt=DateTime->now;
 my $time=$dt->strftime("%d.%m.%Y, %H:%M");
 
+mkdir('html');
 system("ttree -f etc/ttree.cfg  -r -v --define lastmod='$time' ".join(' ',@ARGV));
