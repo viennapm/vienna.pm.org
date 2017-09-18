@@ -1,0 +1,62 @@
+[% title = 'Funding Jonathan Worthington to work on Perl 6' %]
+
+<p><b>
+Vienna.pm is proud to announce to fund <a href="http://jnthn.net/">Jonathan Worthington</a> to work 50 hours on <a href="https://perl6.org/">Rakudo Perl 6</a>.
+</b></p>
+
+Jonathan will work on the following two tasks:
+
+<h4>Improving the ThreadPoolScheduler</h4>
+
+<p>Currently it will quickly bump up the
+number of worker threads even if it could get by with just a handful of
+them, which increases memory use quite notably. That keeps us from raising
+the hard maximum; doing that would allow us to reduce the risk of deadlock,
+which is also highly desirable. While this is one of those tasks where a
+vast amount of time could be sunk into tuning, 15-20 hours here should
+allow for a notable improvement from where we are today.</p>
+
+<h4>Refactoring the way supplies apply back-pressure and concurrency
+  control to work with the non-blocking await in 6.d</h4>
+
+<p>The importance of the non-blocking <code>await</code> in 6.d is that it allows for writing things like:</p>
+
+<pre>
+    start {
+        my ($x, $y) = await async-operation-a(), async-operation-b();
+        do-something-with($x, $y);
+    }
+</pre>
+
+<p>Without having to worry about the `await` actually blocking up a thread.
+Once we're at that point, you could have many thousands of running `start`
+blocks, most of them at an `await`, and schedule them over just a handful
+of OS threads. That makes things like conquer/divide much easier to write;
+today you can quickly overwhelm the thread pool and end up blocking. I
+already implemented the the heart of non-blocking `await` (plus
+non-blocking `react`) and you can get it with `use v6.d.PREVIEW`.
+</p>
+
+<p>
+However, since code can move between threads at the point of an `await`,
+this is not something that can safely be done when a lock is held by that
+code (since then the lock would be released on the wrong thread, which is
+very bad). At the moment, it actually tries to do that, and then the VM
+catches what happened and complains. Unfortunately, the Supply concurrency
+control is expressed in terms of such locks today. While a "if a lock is
+held, do a real blocking await" approach would be fine (and something I'd
+like to put in), it'd also mean non-blocking `await` can't really be used
+in a bunch of places one would really want to use it. Thus, the internals
+of Supply will need to switch to a different approach (some kind of "async
+lock").</p>
+
+<p>A decent bit of headway on this can be made with the time left after
+the work on the thread pool scheduler.</p>
+
+
+<h4>You can help, too</h4>
+
+If you want to see Perl 6 getting more awesome, you could <a href="https://6guts.wordpress.com/2017/05/12/looking-for-perl-6-rakudo-and-moarvm-development-funding/">also fund Jonathan</a> or donate to <a href="https://donate.perlfoundation.org/">the Perl Foundation</a> or <a href="https://ww2.enlightenedperl.org/">Enlightened Perl</a>.
+
+
+
